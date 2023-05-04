@@ -55,6 +55,8 @@ void Snake::eatFruit(Fruit& fruit)
             {
                 if (fruit.getFruitPosition().x == coords[i].x && fruit.getFruitPosition().y == coords[i].y)
                     break;
+                else if ((fruit.getFruitPosition().x == 0.f || fruit.getFruitPosition().x == 25.f) && (fruit.getFruitPosition().y == HEIGHT - 25.f || fruit.getFruitPosition().x == HEIGHT - 50.f))
+                    break;
                 else
                     tmp = false;
             }
