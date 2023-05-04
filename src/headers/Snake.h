@@ -13,6 +13,7 @@ public:
     bool isGameOver();
     void updateSnakePos();
     void changeDir();
+    void restartSnake();
 
     inline void setSnakePosition(sf::Vector2f pos) { m_snake.setPosition(pos); }
     inline sf::Vector2f getSnakePosition() const { return m_snake.getPosition(); }

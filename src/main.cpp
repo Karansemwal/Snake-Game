@@ -33,7 +33,11 @@ int main()
         if (tick == 10)
         {
             // TODO: Fix Game over functionality
-            //if (snake.isGameOver()) break;
+            if (snake.isGameOver())
+            {
+                snake.restartSnake();
+                fruit.setRandomPos();
+            }
             snake.updateSnakePos();
             snake.eatFruit(fruit);
             tick = 0;

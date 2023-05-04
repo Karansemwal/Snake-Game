@@ -111,5 +111,12 @@ void Snake::updateSnakePos()
         else if (coords[0].x == WIDTH) coords[0].x = 0;
         break;
     }
+}
 
+void Snake::restartSnake()
+{
+    coords.clear(); 
+    coords.push_back(sf::Vector2f(150.f, 150.f));
+    coords.push_back(sf::Vector2f(150.f, 125.f));
+    m_score.setString("000");
 }
