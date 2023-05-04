@@ -74,10 +74,10 @@ bool Snake::isGameOver()
 
 void Snake::changeDir()
 {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) dir = 1;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) dir = 2;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) dir = 3;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) dir = 4;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && dir != 3) dir = 1;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && dir != 4) dir = 2;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && dir != 1) dir = 3;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && dir != 2) dir = 4;
 }
 
 void Snake::updateSnakePos()
