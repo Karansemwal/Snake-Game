@@ -3,8 +3,8 @@
 Snake::Snake() 
     : dir(3)
 {
-    sf::Vector2f v = sf::Vector2f(150.f, 150.f);
-    coords.push_back(sf::Vector2f(v));
+    coords.push_back(sf::Vector2f(150.f, 150.f));
+    coords.push_back(sf::Vector2f(150.f, 125.f));
 
     initSnake();
 }
