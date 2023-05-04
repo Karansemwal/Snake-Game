@@ -11,6 +11,8 @@ Snake::Snake()
 
 void Snake::drawSnake(sf::RenderWindow& win)
 {
+    win.draw(m_score);
+    
     for (size_t i = 0; i < coords.size(); i++)
     {
         m_snake.setPosition(coords[i]);
