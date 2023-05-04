@@ -12,7 +12,7 @@ Snake::Snake()
 void Snake::drawSnake(sf::RenderWindow& win)
 {
     win.draw(m_score);
-    
+
     for (size_t i = 0; i < coords.size(); i++)
     {
         m_snake.setPosition(coords[i]);
@@ -92,19 +92,23 @@ void Snake::updateSnakePos()
     {
     case 1:
         coords[0].y -= 25.f;
-        if (coords[0].y == 0 - 25.f) coords[0].y = HEIGHT - 25.f;
+        if (coords[0].y == 0 - 25.f && (coords[0].x == 0.f || coords[0].x == 25.f)) coords[0].y = HEIGHT - 75.f;
+        else if (coords[0].y == 0 - 25.f) coords[0].y = HEIGHT - 25.f;
         break;
     case 2:
         coords[0].x -= 25.f;
-        if (coords[0].x == 0 - 25.f) coords[0].x = WIDTH - 25.f;
+        if (coords[0].x == 25.f && (coords[0].y == HEIGHT - 25.f || coords[0].y == HEIGHT - 50.f)) coords[0].x = WIDTH - 25.f;
+        else if (coords[0].x == 0 - 25.f) coords[0].x = WIDTH - 25.f;
         break;
     case 3:
         coords[0].y += 25.f;
-        if (coords[0].y == HEIGHT) coords[0].y = 0;
+        if (coords[0].y == HEIGHT - 50.f && (coords[0].x == 0.f || coords[0].x == 25.f)) coords[0].y = 0;
+        else if (coords[0].y == HEIGHT) coords[0].y = 0;
         break;
     case 4:
         coords[0].x += 25.f;
-        if (coords[0].x == WIDTH) coords[0].x = 0;
+        if (coords[0].x == WIDTH && (coords[0].y == HEIGHT - 25.f || coords[0].y == HEIGHT - 50.f)) coords[0].x = 50.f;
+        else if (coords[0].x == WIDTH) coords[0].x = 0;
         break;
     }
 
