@@ -34,7 +34,7 @@ void Snake::eatFruit(Fruit& fruit)
         switch (dir)
         {
         case 1:
-            coords.push_back(sf::Vector2f(coords[coords.size() - 1].x, coords[coords.size() - 1].y - 25.f));
+            coords.push_back(sf::Vector2f(coords[coords.size() - 1].x, coords[coords.size() - 1].y + 25.f));
             break;
         case 2:
             coords.push_back(sf::Vector2f(coords[coords.size() - 1].x + 25.f, coords[coords.size() - 1].y));
