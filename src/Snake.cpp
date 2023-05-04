@@ -20,7 +20,15 @@ void Snake::drawSnake(sf::RenderWindow& win)
 
 void Snake::eatFruit(Fruit& fruit)
 {
-    if (coords[0].x == fruit.getFruitPosition().x && coords[0].y == fruit.getFruitPosition().y) {
+    if (coords[0].x == fruit.getFruitPosition().x && coords[0].y == fruit.getFruitPosition().y) 
+    {
+        if (coords.size() - 1 < 10)
+            m_score.setString("00" + std::to_string(coords.size() - 1));
+        else if (coords.size() - 1 > 9 && coords.size() - 1 < 100)
+            m_score.setString("0" + std::to_string(coords.size() - 1));
+        else
+            m_score.setString(std::to_string(coords.size() - 1));
+
         switch (dir)
         {
         case 1:
