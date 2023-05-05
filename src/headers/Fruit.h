@@ -8,10 +8,10 @@
 class Fruit
 {
 public:
-    Fruit() { initFruit(); }
+    Fruit(sf::RenderWindow& win): win(win) { initFruit(); }
     ~Fruit() { }
 
-    void drawFruit(sf::RenderWindow& win) { win.draw(m_fruit); }
+    void drawFruit() { win.draw(m_fruit); }
     void setRandomPos();
     int random(int min, int max);
 
@@ -23,5 +23,6 @@ private:
 
     sf::RectangleShape m_fruit;
     sf::Texture        m_fruitText;
+    sf::RenderWindow& win;
 };
 

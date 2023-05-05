@@ -1,17 +1,14 @@
 #include "headers/Background.h"
 
-void Background::drawBackg(sf::RenderWindow& win)
+void Background::drawBackg()
 {
-    unsigned int row = WIDTH / background.getSize().x;
-    unsigned int column = HEIGHT / background.getSize().x - 2;
+    unsigned int row = win.getSize().x / background.getSize().x;
+    unsigned int column = win.getSize().y / background.getSize().x;
 
     for (size_t i = 0; i < row; i++)
-    {
-        if (i == 2) column += 2;
         for (size_t j = 0; j < column; j++)
         {
             background.setPosition(i * background.getSize().x, j * background.getSize().x);
             win.draw(background);
         }
-    }
 }

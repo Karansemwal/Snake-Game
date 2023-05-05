@@ -1,16 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-#define WIDTH  800
-#define HEIGHT 600
-
 class Background
 {
 public:
-    Background() { initBackg(); }
+    Background(sf::RenderWindow& win): win(win) { initBackg(); }
     ~Background() { }
 
-    void drawBackg(sf::RenderWindow& win);
+    void drawBackg();
 
 private:
     void initBackg()
@@ -22,5 +19,6 @@ private:
 
     sf::RectangleShape background;
     sf::Texture backgText;
+    sf::RenderWindow& win;
 };
 

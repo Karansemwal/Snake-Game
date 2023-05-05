@@ -11,8 +11,8 @@ void Fruit::initFruit()
 
 void Fruit::setRandomPos()
 {
-    int x = random(0, WIDTH);
-    int y = random(0, HEIGHT);
+    int x = random(0, win.getSize().x);
+    int y = random(0, win.getSize().y);
 
     int n;
     n = x % 25;

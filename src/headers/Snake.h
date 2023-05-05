@@ -5,10 +5,10 @@
 class Snake
 {
 public:
-    Snake();
+    Snake(sf::RenderWindow& win);
     ~Snake() { }
 
-    void drawSnake(sf::RenderWindow& win);
+    void drawSnake();
     void eatFruit(Fruit& fruit);
     bool isGameOver();
     void updateSnakePos();
@@ -40,5 +40,6 @@ private:
     std::vector<sf::Vector2f> coords;
     sf::Font m_scoreFont;
     sf::Text m_score;
+    sf::RenderWindow& win;
 };
 
