@@ -1,9 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>
-#include "headers/Background.h"
-#include "headers/Fruit.h"
-#include "headers/Snake.h"
+#include "../include/Background.h"
+#include "../include/Fruit.h"
+#include "../include/Snake.h"
 
 #define VELOCITY 25.f
 
@@ -25,31 +25,43 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed) window.close();
+            if (event.type == sf::Event::Closed) 
+                window.close();
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+                backg.isPlaying = true;
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+                if (backg.isPlaying == true)
+                    backg.isPlaying = false;
+            }
         }
 
         // change snake direction with key input (WASD)
-        snake.changeDir();
-        if (tick == 10)
+        if (backg.isPlaying)
         {
-            // TODO: Fix Game over functionality
-            if (snake.isGameOver())
+            snake.changeDir();
+            if (tick == 10)
             {
-                snake.restartSnake();
-                fruit.setRandomPos();
+                if (snake.isGameOver())
+                {
+                    snake.restartSnake();
+                    fruit.setRandomPos();
+                    backg.isPlaying = false;
+                }
+                snake.updateSnakePos();
+                snake.eatFruit(fruit);
+                tick = 0;
             }
-            snake.updateSnakePos();
-            snake.eatFruit(fruit);
-            tick = 0;
-        }
-        tick++;
+            tick++;
 
-        // rendering
-        window.clear();
-        backg.drawBackg(window);
-        fruit.drawFruit(window);
-        snake.drawSnake(window);
-        window.display();
+            // rendering
+            window.clear();
+            backg.drawBackg(window);
+            fruit.drawFruit(window);
+            snake.drawSnake(window);
+            window.display();
+        }
     }
 
     return 0;

@@ -7,15 +7,22 @@
 class Background
 {
 public:
-    Background() { initBackg(); }
+    Background() 
+    { 
+        initBackg();
+        isPlaying = false; 
+    }
     ~Background() { }
 
     void drawBackg(sf::RenderWindow& win);
 
+public:
+    bool isPlaying;
+
 private:
     void initBackg()
     {
-        backgText.loadFromFile("./src/resources/Background.png");
+        backgText.loadFromFile("./src/resources/grass.png");
         background.setSize(sf::Vector2f(25.f, 25.f));
         background.setTexture(&backgText);
     }

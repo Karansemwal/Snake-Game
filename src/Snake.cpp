@@ -1,4 +1,4 @@
-#include "headers/Snake.h"
+#include "../include/Snake.h"
 
 Snake::Snake() 
     : dir(3)

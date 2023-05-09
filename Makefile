@@ -3,7 +3,7 @@ GCC= g++
 CLANG=clang
 
 # compiler flags
-Flags= -std=c++11 -O2
+Flags= -std=c++14 -O2
 
 Link= -lsfml-graphics -lsfml-window -lsfml-system -lstdc++
 
