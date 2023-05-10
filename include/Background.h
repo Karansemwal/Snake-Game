@@ -10,7 +10,7 @@ public:
     Background() 
     { 
         initBackg();
-        isPlaying = false; 
+        isPlaying = true; 
     }
     ~Background() { }
 
