@@ -24,7 +24,7 @@
 
 1. Install sfml: `sudo apt-get install libsfml-dev`
 
-   Install GNU Make (if not installed): `sudo apt-get insall make`
+   Install GNU Make (if not installed): `sudo apt-get install make`
 
 2. Clone repository: `git clone https://github.com/Karansemwal/Pong-Clone.git`
 
@@ -40,4 +40,4 @@
 
 ## Game Preview
 
-![](https://github.com/Karansemwal/Snake-Game/blob/main/img/Snake-Game-Clip.gif)
+![](https://github.com/Karansemwal/Snake-Game/blob/main/img/Snake-game-clip.gif)
